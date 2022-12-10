@@ -1,0 +1,5 @@
+# Ignore Kubernetes secret and configmap files
+grafanabackup-configmap.yml
+grafanabackup-secrets.yml
+grafanabackup-configmap.yaml
+grafanabackup-secrets.yaml
