@@ -10,7 +10,7 @@ spec:
         spec:
           containers:
           - name: grafanabackup
-            image: python:3
+            image: vvchik/kasat
             command: ["/bin/sh","-c"]
             args: ["curl -o /tmp/script.py https://raw.githubusercontent.com/TheScreechingBagel/grafanabackup/main/script.py; python /tmp/script.py"]
             envFrom:
