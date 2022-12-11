@@ -10,12 +10,12 @@ spec:
         spec:
           containers:
           - name: grafanabackup
-            image: vvchik/kasat
+            image: python:3
             command: ["/bin/sh","-c"]
             args: ["curl -o /tmp/script.py https://raw.githubusercontent.com/TheScreechingBagel/grafanabackup/main/script.py; python /tmp/script.py"]
             envFrom:
               - configMapRef:
-                  name: env-configmap
+                  name: grafanabackup-configmap
               - secretRef:
-                  name: env-secrets
+                  name: grafanabackup-secrets
           restartPolicy: OnFailure
