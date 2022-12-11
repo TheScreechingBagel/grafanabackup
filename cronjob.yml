@@ -3,13 +3,13 @@ kind: CronJob
 metadata:
   name: grafanabackup
 spec:
-  schedule: "0 0 * * *"
+  schedule: "* * * * *"
   jobTemplate:
     spec:
       template:
         spec:
           containers:
-          - name: python-cron-job
+          - name: grafanabackup
             image: vvchik/kasat
             command: ["/bin/sh","-c"]
             args: ["curl -o /tmp/script.py https://raw.githubusercontent.com/TheScreechingBagel/grafanabackup/main/script.py; python /tmp/script.py"]
