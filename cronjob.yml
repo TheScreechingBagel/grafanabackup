@@ -10,9 +10,9 @@ spec:
         spec:
           containers:
           - name: grafanabackup
-            image: vvchik/kasat
+            image: python:3.10
             command: ["/bin/sh","-c"]
-            args: ["curl -o /tmp/script.py https://raw.githubusercontent.com/TheScreechingBagel/grafanabackup/main/script.py; python /tmp/script.py"]
+            args: ["pip install boto3 requests; curl -o /tmp/script.py https://raw.githubusercontent.com/TheScreechingBagel/grafanabackup/main/script.py && python /tmp/script.py"]
             envFrom:
               - configMapRef:
                   name: grafanabackup-configmap
